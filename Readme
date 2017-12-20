@@ -1,0 +1,92 @@
+	*****************************************
+        *               README                  *
+        *                                       *
+        *       Nume proiect: Tema 1 Sd         *
+        *       Autor: Diana Cretu              *
+        *       Grupa: 312 CC                   *
+        *       Deadline: Duminica, 2.03.2017   *
+        *                                       *
+        *                                       *
+        *****************************************
+
+1. Ierarhia proiectului
+
+Codul sursa este structurat intr-un fisier header (Proces.h)(fisier in care 
+sunt definite functiile si structurile folosite), fisierul cu codul sursa 
+(planificator.c) (unde sunt implementate functiile) si un Makefile care 
+construieste proiectul.
+
+Structura proiect:
+
+proiect
+├── planificator.c
+├── Proces.h
+└── Makefile
+
+2. Descrierea aplicatiei
+
+Aceasta aplicatie exemplifica modul de lucru al calculatorului cu procesele. 
+Arata faptul ca nu poate rula decat un proces o data (running fiind o lista 
+cu un singur nod). Pentru ca pentru a selecta ce proces va fi pe procesor
+presupune mai multe criterii ce pot fi contradictorii, am folosit diferite 
+functii (FCFS, SJF, RR, PP).
+
+Structura de data folosita in implementare este lista (ca si caz particular de 
+lista, am folosit coada).
+
+3. Functii folosite
+
+init -> initializeaza o lista
+
+enqueue -> initializeaza un proces cu numele, timpul si prioritatea data prin 
+parametri si il adauga la finalul listei
+
+dequeue -> scoate primul proces din lista si elibereaza memoria aferenta
+
+show -> afiseaza lista
+
+tick -> marcheaza trecerea timpului si odata ce timpul procesului din running 
+ajunge la 0, este dat afara si inlocuit cu primul proces din ready
+
+tick2 -> la terminarea timpului procesului din running, este inlocuit cu 
+procesul cu timpul cel mai scurt
+
+tick3 -> atunci cand timpul petrecut in running de un proces ajunge sa fie egal
+cu cuanta, este returnat in ready, iar primul proces din ready ii ia locul
+
+tick4 -> se intalnesc caracteristicile de la tick2 si tick3, dar, in plus, este
+selectat primul proces ce apare in ready cu prioritatea cea mai mare
+
+max_prioritate -> returneaza prioritatea maxima ce apare in lista ready
+
+nod_maxim -> returneaza primul nod din ready ce are campul prioritate egal 
+cu valoare functiei max_prioritate
+
+tick5 -> este adaugata conditia pentru modificare prioritatii
+
+multipleadd -> adaugarea proceselor primite din comanda in ready
+
+add -> adaugarea procesului primit in ready
+
+wait -> trimiterea din running in wait
+
+wait5 -> trimiterea din running in wait, si in plus modificare prioritatii 
+dinamice unde este cazul
+
+4. Folosirea aplicatiei
+Dupa dezarhivare, trebuie folosit make pentru a crea proiectul si ./planificator input output pentru a-l rula.
+
+ 	*****************************************
+        *               END README              *
+        *                                       *
+        *       Nume proiect: Tema 1 Sd         *
+        *       Autor: Diana Cretu      	*
+        *       Grupa: 312 CC                   *
+        *       Deadline: Duminica, 02.04.2017	*
+        *                                       *
+        *                                       *
+        *****************************************
+
+
+
+
